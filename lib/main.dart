@@ -1,51 +1,60 @@
 import 'package:flutter/material.dart';
 
-import './question.dart';
-import './answer.dart';
+import './Quiz.dart';
+import './Result.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
-
   @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  var questionIndex = 0;
+  var _questionIndex = 0;
+  var _totalScore = 0;
 
-  final questions = const [
-    {
-      'questionText': 'What is your favorite Color?',
-      'answers': ['Black', 'Red', 'Green', 'White']
-    },
-
-    {
-      'questionText': 'What is your favorite Animal?',
-      'answers': ['Ox', 'Goat', 'Cow', 'Hen']
-    },
-
-    {
-      'questionText': 'What is your favorite Actor?',
-      'answers': ['Imtiaz', 'Amin', 'Sajid', 'All of avobe']
-    },
-
-    {
-      'questionText': 'What is your favorite District?',
-      'answers': ['Noakhali', 'Noakhali', 'Noakhali', 'All of Avobe']
-    }
-
-  ];
-
-  void answerQuestion(){
+  void _restartQuiz(){
 
     setState(() {
-      questionIndex = questionIndex + 1;
+      _questionIndex = 0;
+      _totalScore = 0;
     });
 
-    if(questionIndex < questions.length){
+
+  }
+
+  final _questions = const [
+    {
+      'questionText': 'What is your favorite Color?',
+      'answers': [{'text': 'Black', 'score': 10}, {'text': 'Red', 'score': 20}, {'text': 'Green', 'score': 30}, {'text': 'White', 'score': 40}]
+    },
+    {
+      'questionText': 'What is your favorite Animal?',
+      'answers': [{'text': 'Ox', 'score': 10}, {'text': 'Goat', 'score': 20}, {'text': 'Cow', 'score': 30}, {'text': 'Tiger', 'score': 40}]
+    },
+    {
+      'questionText': 'What is your favorite Actor?',
+      'answers': [{'text': 'Imtiaz', 'score': 10}, {'text': 'Amin', 'score': 20}, {'text': 'Sajid', 'score': 30}, {'text': 'All of Avobe', 'score': 40}]
+    },
+    {
+      'questionText': 'What is your favorite District?',
+      'answers': [{'text': 'Noakhali', 'score': 10}, {'text': 'And Noakhali', 'score': 20}, {'text': 'Or Noakhali', 'score': 30}, {'text': 'All of Avobe', 'score': 40}]
+    }
+  ];
+
+
+  void _answerQuestion(int score) {
+
+    _totalScore += score;
+
+    setState(() {
+      _questionIndex = _questionIndex + 1;
+    });
+
+    if (_questionIndex < _questions.length) {
       print('We habe more qus');
-    } else{
+    } else {
       print('No more qus');
     }
   }
@@ -54,27 +63,19 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     // TODO: implement build
 
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text('Quiz Quiz'),
         ),
-        body: questionIndex < questions.length ?
-        Column(
-          children: [
-            Question(
-                questions[questionIndex]['questionText']
-            ),
-
-            ...(questions[questionIndex]['answers'] as List<String>).map((answer){
-              return Answer(answerQuestion, answer);
-            }).toList()
-
-          ],
-        ) : Center(
-        child: Text('You did it')) ,
+        body: _questionIndex < _questions.length
+            ? Quiz(
+                answerQuestion: _answerQuestion,
+                questionIndex: _questionIndex,
+                questions: _questions,
+              )
+            : Result(_totalScore, _restartQuiz),
       ),
     );
   }
