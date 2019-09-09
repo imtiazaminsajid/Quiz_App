@@ -8,17 +8,36 @@ class Question extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      margin: EdgeInsets.only(top: 50.0, bottom: 20.0),
-      child: Text(
-        questionText,
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 28.0,
-        ),
-        textAlign: TextAlign.center,
-      ),
-    );
+      margin: EdgeInsets.only(top: 90.0, bottom: 20.0),
+        padding: EdgeInsets.only(right: 10.0, left: 10.0),
+        height: 150.0,
+        color: Colors.transparent,
+        child: Container(
+            decoration: BoxDecoration(
 
+              border: Border.all(
+                color: Colors.blue[400],
+                style: BorderStyle.solid,
+                width: 10.0,
+              ),
+              color: Colors.white70,
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Center(
+                  child: Text(
+                    questionText,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'Montserrat',
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            )));
   }
 }

@@ -25,16 +25,35 @@ class Result extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Column(
+    return Column(
       children: <Widget>[
-        Text(
-          resultPhrase,
-          style: TextStyle(
-            fontSize: 35.0,
-            color: Colors.red,
+        Container(
+          margin: EdgeInsets.only(top: 190.0),
+          padding: EdgeInsets.only(right: 10.0, left: 10.0),
+          height: 150.0,
+          color: Colors.transparent,
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.green,
+                style: BorderStyle.solid,
+                width: 5.0,
+              ),
+              color: Colors.white70,
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: Center(
+              child: Text(
+                resultPhrase,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: 'Montserrat',
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           ),
-          textAlign: TextAlign.center,
         ),
         FlatButton(
           child: Text(
@@ -44,6 +63,31 @@ class Result extends StatelessWidget {
           onPressed: resetHandler,
         )
       ],
-    ));
+    );
   }
+
+//  @override
+//  Widget build(BuildContext context) {
+//    return Center(
+//        child: Column(
+//      children: <Widget>[
+//
+//        Text(
+//          resultPhrase,
+//          style: TextStyle(
+//            fontSize: 35.0,
+//            color: Colors.red,
+//          ),
+//          textAlign: TextAlign.center,
+//        ),
+//        FlatButton(
+//          child: Text(
+//            'Restart Quiz',
+//            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
+//          ),
+//          onPressed: resetHandler,
+//        )
+//      ],
+//    ));
+//  }
 }
