@@ -12,9 +12,9 @@ class Result extends StatelessWidget {
 
     if (resultScore <= 80) {
       resultText = 'You are awesome and cool';
-    } else if (resultScore <= 100) {
+    } else if (resultScore <= 150) {
       resultText = 'You are very Smart dude!';
-    } else if (resultScore <= 120) {
+    } else if (resultScore <= 200) {
       resultText = 'You are a rich mind people';
     } else {
       resultText = 'You are so bad!';
@@ -55,16 +55,23 @@ class Result extends StatelessWidget {
             ),
           ),
         ),
-        FlatButton(
-          child: Text(
-            'Restart Quiz',
-            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
+        Container(
+          margin: EdgeInsets.only(top: 20.0),
+          child: FlatButton(
+            child: Text(
+              'Restart Quiz',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.red,
+                  fontSize: 18.0),
+            ),
+            onPressed: resetHandler,
           ),
-          onPressed: resetHandler,
         )
       ],
     );
   }
+}
 
 //  @override
 //  Widget build(BuildContext context) {
@@ -90,4 +97,3 @@ class Result extends StatelessWidget {
 //      ],
 //    ));
 //  }
-}

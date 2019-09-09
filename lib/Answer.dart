@@ -9,24 +9,22 @@ class Answer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(right: 20.0, left: 20.0),
-      margin: EdgeInsets.only(top: 10.0),
+        padding: EdgeInsets.only(right: 20.0, left: 20.0),
+        margin: EdgeInsets.only(top: 10.0),
         height: 50.0,
         color: Colors.transparent,
-        child:
-        InkWell(
+        child: InkWell(
           onTap: selectHandler,
           child: Container(
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: Colors.black,
+                  color: Colors.white,
                   style: BorderStyle.solid,
                   width: 1.0,
                 ),
                 color: Colors.white70,
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadius.circular(10.0),
               ),
-
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -38,14 +36,9 @@ class Answer extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-
                   ),
                 ],
-              )
-          ),
-        )
-    );
+              )),
+        ));
   }
-
-
 }

@@ -1,0 +1,128 @@
+[
+  {
+    "questionText": "What is your favorite Color?",
+    "answers": [
+      {
+        "text": "Black",
+        "score": 10
+      },
+      {
+        "text": "Red",
+        "score": 20
+      },
+      {
+        "text": "Green",
+        "score": 30
+      },
+      {
+        "text": "White",
+        "score": 40
+      }
+    ]
+  },
+  {
+    "questionText": "What is your favorite Animal?",
+    "answers": [
+      {
+        "text": "Ox",
+        "score": 10
+      },
+      {
+        "text": "Goat",
+        "score": 20
+      },
+      {
+        "text": "Cow",
+        "score": 30
+      },
+      {
+        "text": "Tiger",
+        "score": 40
+      }
+    ]
+  },
+  {
+    "questionText": "What is your favorite Color?",
+    "answers": [
+      {
+        "text": "Black",
+        "score": 10
+      },
+      {
+        "text": "Red",
+        "score": 20
+      },
+      {
+        "text": "Green",
+        "score": 30
+      },
+      {
+        "text": "White",
+        "score": 40
+      }
+    ]
+  },
+  {
+    "questionText": "What is your favorite Actor?",
+    "answers": [
+      {
+        "text": "Imtiaz",
+        "score": 10
+      },
+      {
+        "text": "Amin",
+        "score": 20
+      },
+      {
+        "text": "Sajid",
+        "score": 30
+      },
+      {
+        "text": "All of Avobe",
+        "score": 40
+      }
+    ]
+  },
+  {
+    "questionText": "What is your favorite District?",
+    "answers": [
+      {
+        "text": "Noakhali",
+        "score": 10
+      },
+      {
+        "text": "And Noakhali",
+        "score": 20
+      },
+      {
+        "text": "Or Noakhali",
+        "score": 30
+      },
+      {
+        "text": "All of Avobe",
+        "score": 40
+      }
+    ]
+  },
+  {
+    "questionText": "What is your favorite Color?",
+    "answers": [
+      {
+        "text": "Black",
+        "score": 10
+      },
+      {
+        "text": "Red",
+        "score": 20
+      },
+      {
+        "text": "Green",
+        "score": 30
+      },
+      {
+        "text": "White",
+        "score": 40
+      }
+    ]
+  }
+]
